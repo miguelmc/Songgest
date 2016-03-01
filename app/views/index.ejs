@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+  <head>
+    <title><%= title %></title>
+    <link rel="icon" type="image/png" href="/img/pp-flavicon.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/lib/angular-carousel/dist/angular-carousel.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript">
+    </script>
+
+  </head>
+  <body>
+    <div id="top-bar">
+      <a href="/#!/"><img src="img/logo.png" title="Pessoa Plural"></a>
+      <a href="/#!/"><div class="nav">Sobre<br>About</div></a>
+      <a href="/#!/"><div class="nav">Tributos<br>Tributes</div></a>
+      <a href="/#!/"><div class="nav">Críticas<br>Reviews</div></a>
+      <a href="/#!/"><div class="nav">Documentos<br>Documents</div></a>
+      <a href="articles.html"><div class="nav">Artigos<br>Articles</div></a>
+      <a href="/#!/"><div class="nav">Números<br>Issues</div></a>
+    </div>
+
+    <section ng-view></section>
+
+    <script type="text/javascript">
+      window.user = <%- user || 'null' %>;
+    </script>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/lib/angular-touch/angular-touch.js"></script>
+    <script type="text/javascript" src="/lib/angular-carousel/dist/angular-carousel.js"></script>
+
+    <script type="text/javascript" src="/entries/entries.client.module.js"></script>
+    <script type="text/javascript" src="/entries/controllers/entries.client.controller.js"></script>
+    <script type="text/javascript" src="/entries/services/entries.client.service.js"></script>
+    <script type="text/javascript" src="/entries/config/entries.client.routes.js"></script>
+
+    <script type="text/javascript" src="/index/index.client.module.js"></script>
+    <script type="text/javascript" src="/index/controllers/index.client.controller.js"></script>
+    <script type="text/javascript" src="/index/config/index.client.routes.js"></script>
+
+    <script type="text/javascript" src="/users/users.client.module.js"></script>
+    <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+    <script type="text/javascript" src="/application.js"></script>
+  </body>
+</html>
