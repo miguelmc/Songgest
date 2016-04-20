@@ -38,7 +38,8 @@ module.exports = function() {
 
   require('../app/routes/users.server.routes.js')(app);
   require('../app/routes/index.server.routes.js')(app);
-  require('../app/routes/entries.server.routes.js')(app);
+  require('../app/routes/songs.server.routes.js')(app);
+  require('../app/routes/triples.server.routes.js')(app);
 
   app.use(express.static('./public'))
 

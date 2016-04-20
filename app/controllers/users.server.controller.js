@@ -33,14 +33,28 @@ var getErrorMessage = function(err) {
 };
 
 
-// Middleware that checks if user is authenticated.
-exports.requiresAdmin = function(req, res, next) {
+// Middleware that checks if there's a user logged in.
+exports.requiresLogin = function(req, res, next) {
   // Here we assume that the ONLY user is the admin,
   // else we could have to a specific authorization middleware.
   // Consider this if project requirements ever change.
   if (!req.isAuthenticated()) {
     return res.status(401).send({
       message: 'You are not logged in as admin'
+    });
+  }
+
+  next();
+};
+
+// Middleware that checks if there's a user logged in.
+exports.requiresAdmin= function(req, res, next) {
+  // Here we assume that the ONLY user is the admin,
+  // else we could have to a specific authorization middleware.
+  // Consider this if project requirements ever change.
+  if (!req.user.admin) {
+    return res.status(403).send({
+      message: 'User not authorized'
     });
   }
 
@@ -58,11 +72,44 @@ exports.renderSignin = function(req, res, next) {
   }
 };
 
-// Not needed
-// exports.renderSignup = function(req, res, next) {};
+exports.renderSignup = function(req, res, next) {
+  if (!req.user) {
+    res.render('signup', {
+      title: "Sign-up form",
+      messages: req.flash('error')
+    });
+  } else {
+    return res.redirect('/');
+  }
+};
 
 // Signin handled by Passport
-// Signup not needed
+
+exports.signup = function(req, res, next) {
+  if (!req.user) {
+    var user = new User(req.body);
+    var message = null;
+
+    user.provider = "local";
+
+    // Create user then log it in.
+    user.save(function(err) {
+      if (err) {
+        var message = getErrorMessage(err);
+
+        req.flash('error', message);
+        return res.redirect('/signup');
+      }
+
+      req.login(user, function(err) {
+        if (err) return next(err);
+        return res.redirect('/');
+      });
+    });
+  } else {
+    return res.redirect('/');
+  }
+}
 
 exports.signout = function(req, res) {
   req.logout();
@@ -84,6 +131,7 @@ exports.create = function(req, res, next) {
 
 exports.list = function(req, res, next) {
   User.find({}, function(err, users){
+    console.log(users);
     if (err) {
       return next(err);
     } else {

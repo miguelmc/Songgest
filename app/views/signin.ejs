@@ -2,26 +2,44 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="icon" type="image/png" href="/img/pp-flavicon.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/lib/angular-material/angular-material.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="/js/jquery-2.2.0.min.js"></script>
   </head>
   <body>
-    <% for (var i in messages) { %>
-      <div class="flash"><%= messages[i] %></div>
-    <% } %>
+    <div id="top-bar">
+      <a href="/#!/"><h1>Songgest</h1></a>
+      <a href="/#!/"><div class="nav">About<br>Us</div></a>
+    </div>
+    <h1 id="title-center"> Login </h1>
 
-    <form action="/signin" method="post">
-      <div>
-        <label>Username:</label>
-        <input type="text" name="username" />
-      </div>
+    <div id="signup-login">
+      <% for (var i in messages) { %>
+        <div class="flash"><%= messages[i] %></div>
+      <% } %>
 
-      <div>
-        <label>Password:</label>
-        <input type="password" name="password" />
-      </div>
+      <form action="/signin" method="post">
+        <div id="username-field">
+          <label>Username:</label>
+          <input type="text" name="username" />
+        </div>
 
-      <div>
-        <input type="submit" value="Sign in" />
-      </div>
-    </form>
+        <div id="password-field">
+          <label>Password:</label>
+          <input type="password" name="password" />
+        </div>
+
+        <div id="submit-button">
+          <input type="submit" value="Sign in" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>

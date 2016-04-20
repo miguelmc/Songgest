@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #333451;
+  background-color: #4E87AA;
   font-family: 'Arvo', Courier, sans-serif;
   color: #f2ebd8;
 }
@@ -16,12 +16,45 @@ a, a:visited {
   color: #f58548;
 }
 
+#title-center {
+  font-size: 36px;
+  text-align: center;
+}
+
+.user-menu {
+  padding: 0 2em;
+  color: white;
+}
+
+#listen-bar {
+  margin: auto;
+  width: 50%;
+}
+
+#signup-login {
+  margin: auto;
+  width: 30%;
+  padding: 2em;
+  text-align: center;
+}
+
+#username-field {
+  padding: 1em 0;
+}
+
+#password-field {
+  padding-bottom: 1em;
+}
+
+#submit-button {
+  text-align: center;
+}
 
 
 /* TOP BAR STYLING */
 #top-bar {
   width: 100%;
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   z-index: 100;
   background-color: #282938;
@@ -34,11 +67,11 @@ a, a:visited {
   letter-spacing: 1px;
 }
 
-#top-bar img {
+#top-bar h1{
   height: 64px;
   width: auto;
-  padding: 10px 30px;
   display: inline-block;
+  padding-left: 20px;
 }
 
 .nav, .nav a, .nav a:visited {
@@ -59,7 +92,16 @@ a, a:visited {
 
 /* BODY CONTENT STYLING */
 #content {
-  margin-top: 84px;
+  margin-top: 25px;
+}
+
+#main-content {
+  text-align: center;
+}
+
+#main-content h1 {
+  padding: 10px 0;
+  font-size: 36px;
 }
 
 
@@ -68,12 +110,18 @@ a, a:visited {
 .stepcarousel {
   position: relative; /*leave this value alone*/
   overflow: hidden; /*leave this value alone*/
+  margin:auto;
   width: 100%; /*Width of Carousel Viewer itself*/
   height: 480px; /*Height should enough to fit largest content's height*/
   background-color: #000;
   -webkit-box-sizing: border-box; /* set box model so container width and height value includes any padding/border defined */
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.stepcarousel ul {
+  margin:auto;
+  width: 70%; /*Width of Carousel Viewer itself*/
 }
 
 .stepcarousel .belt {
@@ -176,96 +224,6 @@ span.paginatecircle.selected {background: #ec4e4e;}
 }
 
 
-
-
-
-/*#slides {
-  margin-top: 4rem;
-}
-
-#slide-arrows {
-  position: fixed;
-  top: 4rem;
-  width: 100%;
-  z-index: 10;
-}
-
-#slide-left {
-  float: left;
-  width: 15%;
-}
-
-#slide-right {
-  float: right;
-  width: 15%;
-}
-
-#sleft {
-  width: 100%;
-  background: none;
-  border-color: none;
-  border-style: none;
-}
-
-#sright {
-  width: 100%;
-  background: none;
-  border-color: none;
-  border-style: none;
-}
-
-#slide-indicators {
-  position: fixed;
-  top: 30rem;
-  z-index: 10;
-}
-
-
-
-#circle {
-  float: left;
-  width: 5%;
-}
-
-#search-go {
-  width: 100%;
-  background: none;
-  border-color: none;
-  border-style: none;
-}
-
-#search-box {
-  width: 100%;
-  height: 1.75rem;
-}
-
-#advanced {
-  padding: 1rem 0;
-  text-align: center;
-}
-
-.slide {
-  width: 100%;
-  display: none;
-}
-
-#articles {
-  width: 80%;
-  margin: 4rem auto 1rem auto;
-}
-
-.abc-article-section {
-  width: 100%;
-  margin: 2rem 0;
-}
-
-.article {
-  width: 20%;
-  margin: 0 2.5%;
-  background-color: white;
-  box-shadow: 0px 2px 2px 1px rgb(100, 100, 100);
-}*/
-
 #slides_control > div{
   height: 200px;
 }
@@ -283,6 +241,7 @@ span.paginatecircle.selected {background: #ec4e4e;}
   margin-left:-200px;
 }
 
+
 #indicators {
   margin-left: auto;
   margin-right: auto;
@@ -290,3 +249,19 @@ span.paginatecircle.selected {background: #ec4e4e;}
   border-collapse: collapse;
   z-index: -1; position:relative
 }
+
+.autocompletedemoCustomTemplate .autocomplete-custom-template li {
+  border-bottom: 1px solid #ccc;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+white-space: normal; }
+.autocompletedemoCustomTemplate .autocomplete-custom-template li:last-child {
+border-bottom-width: 0; }
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-title,
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-metadata {
+  display: block;
+line-height: 2; }
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-title md-icon {
+  height: 18px;
+width: 18px; }

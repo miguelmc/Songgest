@@ -20,7 +20,6 @@ var UserSchema = new Schema({
   },
   email: {
     type: String,
-    required: true,
     match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
   },
   password: {
@@ -30,6 +29,10 @@ var UserSchema = new Schema({
       return password && password.length > 6;
     }, "Password should be longer"
     ]
+  },
+  admin: {
+    type: Boolean,
+    default: false
   },
   salt: {
     type: String

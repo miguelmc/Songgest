@@ -4,8 +4,9 @@ var config = require('./config'),
 module.exports = function() {
   var db = mongoose.connect(config.db);
 
-  require('../app/models/entry.server.model');
   require('../app/models/user.server.model');
+  require('../app/models/song.server.model');
+  require('../app/models/triple.server.model');
 
   return db;
 };

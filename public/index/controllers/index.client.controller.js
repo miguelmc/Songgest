@@ -5,11 +5,11 @@ angular.module('index').controller('IndexController', ['$scope',
 
     $scope.myInterval = 3000;
     $scope.slides= [
-      {image: '/img/pessoa1.jpg', title: "Content title 1"},
-      {image: '/img/pessoa2.jpg', title: "Content title 2"},
-      {image: '/img/pessoa3.jpg', title: "Content title 3"},
-      {image: '/img/pessoa4.jpg', title: "Content title 4"},
-      {image: '/img/pessoa5.jpg', title: "Content title 5"}
+      {image: '/img/music1.jpg', title: "Content title 1"},
+      {image: '/img/music2.jpg', title: "Content title 2"},
+      {image: '/img/music3.jpg', title: "Content title 3"},
+      {image: '/img/music4.jpg', title: "Content title 4"},
+      {image: '/img/music5.jpg', title: "Content title 5"}
     ];
   }
 ]);
